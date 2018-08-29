@@ -29,8 +29,8 @@
 
 .grid-container {
   display: inline-grid;
-  grid-template-columns: 2em 2em 2em;
-  grid-template-rows: 2em 2em 2em;
+  grid-template-columns: 20vh 20vh 20vh;
+  grid-template-rows: 20vh 20vh 20vh;
   background-color: #2196F3;
 }
 
