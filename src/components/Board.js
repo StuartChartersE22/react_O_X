@@ -7,7 +7,12 @@ const Board = (props) => {
 
     const gameRow = row.map((cell, xIndex) => {
       const cellCoord = `${xIndex}:${yIndex}`
-      return (<td key={cellCoord} className="cell">
+      return (
+        <td key={cellCoord}
+          value={cellCoord}
+          // onClick={props.} 
+          className="cell"
+        >
         <Cell content={cell}/>
       </td>);
     });
