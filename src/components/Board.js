@@ -8,7 +8,7 @@ const Board = (props) => {
     const gameRow = row.map((cell, xIndex) => {
       const cellCoord = `${xIndex}:${yIndex}`
       return (
-        <div className="grid-item cell-container" key={cellCoord}>
+        <div className="grid-item" key={cellCoord}>
           <Cell
             coord={cellCoord}
             content={cell}
