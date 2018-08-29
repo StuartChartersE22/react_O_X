@@ -1,17 +1,11 @@
 import React from 'react';
 
-class Cell extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <div>
-        {this.props.content}
-      </div>
-    );
-  }
-}
+const Cell = (props) => {
+  return (
+    <div>
+      {props.content}
+    </div>
+  );
+};
 
 export default Cell;
