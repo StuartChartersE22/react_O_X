@@ -1,17 +1,21 @@
 import React from 'react';
+import Board from '../components/Board.js';
 
-class Game {
+class Game extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      gameState: [[],[],[]]
+      gameState: [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+      ]
     }
   }
 
   render() {
     return (
       <div>
-        <NewGame/>
         <Board gameState = {this.state.gameState}/>
       </div>
     );
