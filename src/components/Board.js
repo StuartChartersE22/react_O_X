@@ -3,17 +3,23 @@ import Cell from './Cell.js';
 
 const Board = (props) => {
 
+  // function handleOnClick() {
+  //   props.onTurn(cellCoord)
+  // }
+
   const board = props.gameState.map((row, yIndex) => {
 
     const gameRow = row.map((cell, xIndex) => {
       const cellCoord = `${xIndex}:${yIndex}`
       return (
         <td key={cellCoord}
-          value={cellCoord}
-          // onClick={props.} 
           className="cell"
         >
-        <Cell content={cell}/>
+        <Cell
+          coord={cellCoord}
+          content={cell}
+          handleClick ={props.onTurn}
+        />
       </td>);
     });
 

@@ -12,19 +12,19 @@ class Game extends React.Component {
       ],
       turnNum: 0
     }
+    this.handleTurn = this.handleTurn.bind(this);
   }
 
 
-  handleTurn(evt) {
+  handleTurn(tableCoord) {
+    console.log(tableCoord);
     const originalGameState = this.state.gameState;
-    const tableCoord = evt.target.value;
     const coord = tableCoord.split(':');
-    const cell = originalGameState[parseInt(coord[1])][parseInt(coord[0])];
     if (this.state.turnNum % 2 === 0){
-      cell = 'X'
+      originalGameState[parseInt(coord[1])][parseInt(coord[0])] = 'X'
     }
     else {
-      cell = 'O'
+      originalGameState[parseInt(coord[1])][parseInt(coord[0])] = 'O'
     }
     this.setState({gameState: originalGameState, turnNum: this.state.turnNum + 1})
   }
@@ -32,7 +32,7 @@ class Game extends React.Component {
   render() {
     return (
       <div>
-        <Board gameState = {this.state.gameState}/>
+        <Board gameState = {this.state.gameState} onTurn = {this.handleTurn}/>
       </div>
     );
   }
