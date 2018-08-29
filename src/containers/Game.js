@@ -17,7 +17,6 @@ class Game extends React.Component {
 
 
   handleTurn(tableCoord) {
-    console.log(tableCoord);
     const originalGameState = this.state.gameState;
     const coord = tableCoord.split(':');
     if (this.state.turnNum % 2 === 0){
@@ -31,9 +30,7 @@ class Game extends React.Component {
 
   render() {
     return (
-      <div>
-        <Board gameState = {this.state.gameState} onTurn = {this.handleTurn}/>
-      </div>
+      <Board gameState = {this.state.gameState} onTurn = {this.handleTurn}/>
     );
   }
 

@@ -3,12 +3,11 @@ import React from 'react';
 const Cell = (props) => {
 
   function handleOnClick() {
-    console.log(props.coord);
     props.handleClick(props.coord);
   }
 
   return (
-    <div onClick= {handleOnClick} className="input">
+    <div onClick= {handleOnClick} className="cell">
       {props.content}
     </div>
   );

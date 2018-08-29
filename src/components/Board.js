@@ -3,37 +3,29 @@ import Cell from './Cell.js';
 
 const Board = (props) => {
 
-  // function handleOnClick() {
-  //   props.onTurn(cellCoord)
-  // }
-
-  const board = props.gameState.map((row, yIndex) => {
+  const board = props.gameState.reduce((workingBoard,row, yIndex) => {
 
     const gameRow = row.map((cell, xIndex) => {
       const cellCoord = `${xIndex}:${yIndex}`
       return (
-        <td key={cellCoord}
-          className="cell"
-        >
-        <Cell
-          coord={cellCoord}
-          content={cell}
-          handleClick ={props.onTurn}
-        />
-      </td>);
+        <div className="grid-item cell-container" key={cellCoord}>
+          <Cell
+            coord={cellCoord}
+            content={cell}
+            handleClick ={props.onTurn}
+          />
+        </div>
+      );
     });
 
-    return (<tr key={yIndex}>
-      {gameRow}
-    </tr>);
-  });
+    return workingBoard.concat(gameRow);
+
+  }, []);
 
   return (
-    <table>
-      <tbody>
-        {board}
-      </tbody>
-    </table>
+    <div className="grid-container board">
+      {board}
+    </div>
   );
 };
 
