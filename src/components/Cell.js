@@ -3,6 +3,7 @@ import React from 'react';
 const Cell = (props) => {
 
   function handleOnClick() {
+    if(props.content !== null) return null;
     props.handleClick(props.coord);
   }
 
